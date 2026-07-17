@@ -261,15 +261,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/fire/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml \
     vendor/xiaomi/fire/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml \
     vendor/xiaomi/fire/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml \
-    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc \
-    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service_lc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service_lc.rc \
-    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.4-service.widevine.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.gnss-service.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss-service.mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc \
-    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.thermal@2.0-service.mtk.rc \
-    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/fuelgauged_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_init.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/fuelgauged_nvram_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_nvram_init.rc \
@@ -377,7 +372,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     arm.graphics-V1-ndk_platform \
-    android.hardware.thermal@2.0-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.2-impl \
     libJpgEncPipe \
     libaedv \
@@ -482,13 +476,10 @@ PRODUCT_PACKAGES += \
     consumerir.common \
     fingerprint.fpc \
     fingerprint.goodix \
-    gatekeeper.beanpod \
     gps.default \
     hwcomposer.mt6768 \
     kmsetkey.beanpod \
-    libSoftGatekeeper \
     sensors.mt6768 \
-    thermal_hal \
     vendor.mediatek.hardware.camera.atms@1.0-impl \
     vendor.mediatek.hardware.camera.bgservice@1.1-impl \
     vendor.mediatek.hardware.camera.isphal@1.0-impl \
@@ -725,7 +716,6 @@ PRODUCT_PACKAGES += \
     libmtksysutils \
     libmtktinyxml \
     libmtkutils \
-    liboemcrypto \
     libpn557_fw \
     libpq_cust_base \
     libpqframework \
@@ -738,18 +728,12 @@ PRODUCT_PACKAGES += \
     libstorage_otp \
     libsysenv \
     libteei_daemon_vfs \
-    libtlcWidevineModularDrm \
     libtrm \
     libudf \
-    liburee_meta_drmkeyinstall \
     libutinterface_custom_md \
     libutinterface_md \
     libwifi-hal-mtk \
     libwpfa \
-    libwvhidl \
-    libwvkeybox \
-    libwvkeyboxext \
-    libwvdrmengine \
     libdpframework \
     libpq_prot \
     libmtkcam_streaminfo_plugin-p1stt \
@@ -781,7 +765,6 @@ PRODUCT_PACKAGES += \
     sc820cs_truly_mipi_raw_india_IdxMgr \
     sc820cs_truly_mipi_raw_india_tuning \
     sc820cs_truly_mipi_raw_tuning \
-    sensors.camera.light \
     vendor.mediatek.hardware.camera.atms@1.0 \
     vendor.mediatek.hardware.camera.bgservice@1.0 \
     vendor.mediatek.hardware.camera.bgservice@1.1 \
@@ -842,26 +825,18 @@ PRODUCT_PACKAGES += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common \
-    android.hardware.usb@1.2-service-mediatekv2.xml \
     gnss-mtk.xml \
     gnss@2.1-service.xml \
-    manifest_android.hardware.drm@1.4-service.widevine.xml \
-    vendor_android.hardware.biometrics.fingerprint@2.1-service.xml \
     bp_kmsetkey_ca \
     ccci_mdinit \
     ccci_rpcd \
     fuelgauged \
     fuelgauged_nvram \
     gsm0710muxd \
-    android.hardware.biometrics.fingerprint@2.1-service \
-    android.hardware.biometrics.fingerprint@2.1-service_lc \
-    android.hardware.drm@1.4-service.widevine \
     android.hardware.gnss-service.mediatek \
     android.hardware.graphics.allocator@4.0-service-mediatek \
     android.hardware.keymaster@4.1-service.beanpod \
     android.hardware.secure_element@1.2-service-mediatek \
-    android.hardware.thermal@2.0-service.mtk \
-    android.hardware.usb@1.2-service-mediatekv2 \
     camerahalserver \
     mtkfusionrild \
     tetheroffloadservice \
@@ -896,7 +871,6 @@ PRODUCT_PACKAGES += \
     vendor_etc_audio_param_cust_audio_param_global_AudioParamOptions_vext_xml \
     vendor_lib_libmtk_drvb_so \
     vendor_lib64_hw_vulkan_mt6768_so \
-    vendor_lib64_hw_gatekeeper_default_so \
     vendor_lib64_libdpframework_so \
     vendor_lib64_libmtk_drvb_so \
     vendor_lib64_libpq_prot_so
