@@ -401,8 +401,8 @@ PRODUCT_PACKAGES += \
     libvpu5 \
     libmtk_drvb \
     vendor.mediatek.hardware.audio@6.1 \
-    vendor.mediatek.hardware.bluetooth.audio@2.1 \
-    vendor.mediatek.hardware.bluetooth.audio@2.2 \
+    vendor.mediatek.hardware.bluetooth.audio@2.1-vendor \
+    vendor.mediatek.hardware.bluetooth.audio@2.2-vendor \
     vendor.mediatek.hardware.mms@1.0 \
     vendor.mediatek.hardware.mms@1.1 \
     vendor.mediatek.hardware.mms@1.2 \

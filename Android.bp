@@ -61,8 +61,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libbluetooth_audio_session_mediatek",
                 "libcutils",
@@ -86,8 +86,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libbluetooth_audio_session_mediatek",
                 "libcutils",
@@ -219,8 +219,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libbluetooth_audio_session_mediatek.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libcutils",
                 "libfmq",
@@ -238,8 +238,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libbluetooth_audio_session_mediatek.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libcutils",
                 "libfmq",
@@ -1255,8 +1255,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.bluetooth.audio@2.1",
+    name: "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
     owner: "xiaomi",
+    stem: "vendor.mediatek.hardware.bluetooth.audio@2.1",
     strip: {
         none: true,
     },
@@ -1302,8 +1303,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.bluetooth.audio@2.2",
+    name: "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
     owner: "xiaomi",
+    stem: "vendor.mediatek.hardware.bluetooth.audio@2.2",
     strip: {
         none: true,
     },
@@ -1314,7 +1316,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "android.hardware.audio.common@5.0",
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
                 "android.hidl.safe_union@1.0",
                 "libhidlbase",
                 "liblog",
@@ -1332,7 +1334,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "android.hardware.audio.common@5.0",
-                "vendor.mediatek.hardware.bluetooth.audio@2.1",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
                 "android.hidl.safe_union@1.0",
                 "libhidlbase",
                 "liblog",
