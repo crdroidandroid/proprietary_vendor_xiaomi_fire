@@ -401,8 +401,6 @@ PRODUCT_PACKAGES += \
     libvpu5 \
     libmtk_drvb \
     vendor.mediatek.hardware.audio@6.1 \
-    vendor.mediatek.hardware.bluetooth.audio@2.1-vendor \
-    vendor.mediatek.hardware.bluetooth.audio@2.2-vendor \
     vendor.mediatek.hardware.mms@1.0 \
     vendor.mediatek.hardware.mms@1.1 \
     vendor.mediatek.hardware.mms@1.2 \
@@ -874,6 +872,12 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libdpframework_so \
     vendor_lib64_libmtk_drvb_so \
     vendor_lib64_libpq_prot_so
+
+ifeq ($(wildcard hardware/mediatek/interfaces/hardware/bluetooth/audio/2.1/Android.bp),)
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.bluetooth.audio@2.1-vendor \
+    vendor.mediatek.hardware.bluetooth.audio@2.2-vendor
+endif
 
 PRODUCT_BOOT_JARS += \
     mediatek-ims-base \

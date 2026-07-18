@@ -12,6 +12,40 @@ soong_namespace {
     ],
 }
 
+soong_config_module_type {
+    name: "xiaomi_fire_bt_audio_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "xiaomi_fire",
+    bool_variables: ["uses_mtk_bt_audio_source"],
+    properties: ["shared_libs"],
+}
+
+xiaomi_fire_bt_audio_cc_defaults {
+    name: "xiaomi_fire_bt_audio_interface_defaults",
+    soong_config_variables: {
+        uses_mtk_bt_audio_source: {
+            shared_libs: [
+                "vendor.mediatek.hardware.bluetooth.audio@2.1",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+            ],
+            conditions_default: {
+                shared_libs: [
+                    "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
+                    "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
+                ],
+            },
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "xiaomi_fire_bt_audio_cc_prebuilt_library_shared",
+    module_type: "cc_prebuilt_library_shared",
+    config_namespace: "xiaomi_fire",
+    bool_variables: ["uses_mtk_bt_audio_source"],
+    properties: ["enabled"],
+}
+
 cc_prebuilt_library_shared {
     name: "arm.graphics-V1-ndk_platform",
     owner: "xiaomi",
@@ -51,6 +85,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.bluetooth.audio@2.2-impl",
+    defaults: ["xiaomi_fire_bt_audio_interface_defaults"],
     owner: "xiaomi",
     strip: {
         none: true,
@@ -61,8 +96,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libbluetooth_audio_session_mediatek",
                 "libcutils",
@@ -86,8 +119,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libbluetooth_audio_session_mediatek",
                 "libcutils",
@@ -210,6 +241,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libbluetooth_audio_session_mediatek",
+    defaults: ["xiaomi_fire_bt_audio_interface_defaults"],
     owner: "xiaomi",
     strip: {
         none: true,
@@ -220,8 +252,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libbluetooth_audio_session_mediatek.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libcutils",
                 "libfmq",
@@ -239,8 +269,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libbluetooth_audio_session_mediatek.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
-                "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
                 "libbase",
                 "libcutils",
                 "libfmq",
@@ -1255,10 +1283,18 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
+xiaomi_fire_bt_audio_cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.bluetooth.audio@2.1-vendor",
     owner: "xiaomi",
     stem: "vendor.mediatek.hardware.bluetooth.audio@2.1",
+    soong_config_variables: {
+        uses_mtk_bt_audio_source: {
+            enabled: false,
+            conditions_default: {
+                enabled: true,
+            },
+        },
+    },
     strip: {
         none: true,
     },
@@ -1303,10 +1339,18 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
+xiaomi_fire_bt_audio_cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.bluetooth.audio@2.2-vendor",
     owner: "xiaomi",
     stem: "vendor.mediatek.hardware.bluetooth.audio@2.2",
+    soong_config_variables: {
+        uses_mtk_bt_audio_source: {
+            enabled: false,
+            conditions_default: {
+                enabled: true,
+            },
+        },
+    },
     strip: {
         none: true,
     },
