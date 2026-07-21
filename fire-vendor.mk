@@ -264,6 +264,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.gnss-service.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss-service.mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc \
+    vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.c2@1.2-mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/fuelgauged_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_init.rc \
@@ -297,6 +298,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/vpud.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vpud.rc \
     vendor/xiaomi/fire/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
+    vendor/xiaomi/fire/proprietary/vendor/etc/mtk_platform_codecs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_config.xml \
     vendor/xiaomi/fire/proprietary/vendor/etc/slp_conf:$(TARGET_COPY_OUT_VENDOR)/etc/slp_conf \
     vendor/xiaomi/fire/proprietary/vendor/etc/smartpa_param/AW_DSP.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/AW_DSP.bin \
     vendor/xiaomi/fire/proprietary/vendor/etc/smartpa_param/AW_VMAX_LEFT.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/AW_VMAX_LEFT.bin \
@@ -474,9 +476,11 @@ PRODUCT_PACKAGES += \
     consumerir.common \
     fingerprint.fpc \
     fingerprint.goodix \
+    gatekeeper.beanpod \
     gps.default \
     hwcomposer.mt6768 \
     kmsetkey.beanpod \
+    libSoftGatekeeper \
     sensors.mt6768 \
     vendor.mediatek.hardware.camera.atms@1.0-impl \
     vendor.mediatek.hardware.camera.bgservice@1.1-impl \
@@ -526,6 +530,7 @@ PRODUCT_PACKAGES += \
     libaal_mtk \
     libaalservice \
     libabfadp \
+    libadpcmdec_mtk \
     libalLDC \
     libalhLDC \
     libaltek_ldc_preview \
@@ -585,6 +590,22 @@ PRODUCT_PACKAGES += \
     libcares_naptr \
     libcarrierconfig \
     libccci_util \
+    libcodec2_hidl@1.0-v31 \
+    libcodec2_hidl@1.1-v31 \
+    libcodec2_hidl@1.2-v31 \
+    libcodec2_hidl_plugin-v31 \
+    libcodec2_mtk_c2store \
+    libcodec2_mtk_vdec \
+    libcodec2_mtk_venc \
+    libcodec2_soft_common-v31 \
+    libcodec2_soft_mtk_alacdec \
+    libcodec2_soft_mtk_apedec \
+    libcodec2_soft_mtk_imaadpcmdec \
+    libcodec2_soft_mtk_mp3dec \
+    libcodec2_soft_mtk_msadpcmdec \
+    libcodec2_vndk-v31 \
+    libcodec2_vpp_qt_plugin \
+    libcodec2_vpp_rs_plugin \
     libcomposer_ext \
     libconnfem \
     libcurl_xcap_md \
@@ -599,6 +620,7 @@ PRODUCT_PACKAGES += \
     libfeature_rss \
     libfeatureiodrv_mem \
     libforkexecwrap \
+    libformatter \
     libged \
     libgf_ca \
     libgf_hal \
@@ -636,6 +658,7 @@ PRODUCT_PACKAGES += \
     libmml \
     libmnetlink_v104 \
     libmnl \
+    libmp3dec_mtk \
     libmpbase \
     libmsnr \
     libmtcloader \
@@ -722,6 +745,8 @@ PRODUCT_PACKAGES += \
     libratconfig \
     librilfusion \
     libsensor_custom \
+    libsfplugin_ccodec_utils-v31 \
+    libstagefright_bufferqueue_helper-v31 \
     libstereoinfoaccessor_vsdof \
     libstorage_otp \
     libsysenv \
@@ -825,6 +850,7 @@ PRODUCT_PACKAGES += \
     mediatek-telephony-common \
     gnss-mtk.xml \
     gnss@2.1-service.xml \
+    manifest_media_c2_V1_2_default.xml \
     bp_kmsetkey_ca \
     ccci_mdinit \
     ccci_rpcd \
@@ -834,6 +860,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-service.mediatek \
     android.hardware.graphics.allocator@4.0-service-mediatek \
     android.hardware.keymaster@4.1-service.beanpod \
+    android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.secure_element@1.2-service-mediatek \
     camerahalserver \
     mtkfusionrild \
@@ -865,10 +892,12 @@ PRODUCT_PACKAGES += \
     vtservice
 
 PRODUCT_PACKAGES += \
+    vendor_bin_hw_android_hardware_media_c2@1_2-mediatek \
     vendor_etc_audio_param_cust_audio_param_global_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_global_AudioParamOptions_vext_xml \
     vendor_lib_libmtk_drvb_so \
     vendor_lib64_hw_vulkan_mt6768_so \
+    vendor_lib64_hw_gatekeeper_default_so \
     vendor_lib64_libdpframework_so \
     vendor_lib64_libmtk_drvb_so \
     vendor_lib64_libpq_prot_so
