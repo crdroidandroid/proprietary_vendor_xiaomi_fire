@@ -513,6 +513,7 @@ PRODUCT_PACKAGES += \
     libMNN \
     libNoFpsActor \
     libOpenCL \
+    libQstAlgo \
     libSQLiteModule_VER_ALL \
     libSonyIMX230PdafLibrary \
     libSonyIMX230PdafLibraryWrapper \
@@ -654,6 +655,7 @@ PRODUCT_PACKAGES += \
     libmipc \
     libmiphone_capture_bokeh \
     libmiphone_preview_bokeh \
+    libmmc5603 \
     libmml \
     libmnetlink_v104 \
     libmnl \
