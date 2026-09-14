@@ -162,7 +162,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     relative_install_path: "hw",
     prefer: true,
-    soc_specific: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -307,7 +307,7 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     prefer: true,
-    soc_specific: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -1350,7 +1350,7 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     prefer: true,
-    soc_specific: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -1399,7 +1399,7 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     prefer: true,
-    soc_specific: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
