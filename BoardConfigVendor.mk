@@ -2,6 +2,9 @@
 # Automatically generated file. DO NOT MODIFY
 #
 
+FIRE_INCLUDE_FIRMWARE ?= false
+
+ifeq ($(FIRE_INCLUDE_FIRMWARE),true)
 AB_OTA_PARTITIONS += \
     gz \
     lk \
@@ -12,3 +15,4 @@ AB_OTA_PARTITIONS += \
     spmfw \
     sspm \
     tee
+endif
