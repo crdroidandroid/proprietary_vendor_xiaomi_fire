@@ -1,3 +1,3 @@
 [lfs]
-    url = "https://lfs.undocumented.software/lfs/blobs.git/info/lfs"
-    pushurl = "ssh://git@lfs.undocumented.software/lfs/blobs.git"
+    url = "https://github.com/MoonL1ght-Team/proprietary_vendor_xiaomi_fire.git/info/lfs"
+    pushurl = "https://github.com/MoonL1ght-Team/proprietary_vendor_xiaomi_fire.git/info/lfs"
