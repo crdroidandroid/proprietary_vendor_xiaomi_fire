@@ -1130,8 +1130,8 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.audio-V1-ndk \
     vendor.mediatek.hardware.audio@6.1 \
     vendor.mediatek.hardware.bluetooth.audio-V1-ndk \
-    vendor.mediatek.hardware.bluetooth.audio@2.1 \
-    vendor.mediatek.hardware.bluetooth.audio@2.2 \
+    vendor.mediatek.hardware.bluetooth.audio@2.1_vendor \
+    vendor.mediatek.hardware.bluetooth.audio@2.2_vendor \
     vendor.mediatek.hardware.composer_ext-V1-ndk \
     vendor.mediatek.hardware.composer_ext@1.0 \
     vendor.mediatek.hardware.gpuserv-V2-ndk \
